@@ -1,22 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
 html,
 body {
+  font-family: 'Roboto';
+  font-weight: 700;
   height: 100%;
   margin: 0;
   padding: 0;
-}
-body {
-  background-image: url("\assets\images\foret.jpg");
+  background-image: url("\assets\images\foret.png");
   background-size: cover;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-position: center;
-}
-@media(max-width:991px) {
-  .sidebar{
-      background-color: rgba(255, 255, 255, 0.15);
   }
-}
 
-
+@import url("./assets/upload.css");
 @import url("./assets/navbar.css");
+
