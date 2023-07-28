@@ -4,6 +4,7 @@ import { Component } from "@angular/core";
 @Component({
     selector:'upload',
     template:'./app.component.html',
+    styleUrls:['./app.component.css']
 })
 
 
