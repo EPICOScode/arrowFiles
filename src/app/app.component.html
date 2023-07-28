@@ -1,15 +1,34 @@
- <!--Upload input-->
- <div upload class="container">
+<!--Upload input-->
+<div class="container">
   <div class="form__container">
-    <form upload action="#" class="form" id="form">
-      <input type="file" name="file" hidden id="file-input" />
+    <form (click)="onFormClick()">
+      <!-- We are hiding the file input and using a button to trigger it -->
+      <input #fileInput type="file" id="file-input" style="display: none" (change)="onFileChange($event)">
       <p class="helper__text">Push the button to upload a file</p>
       <i class='bx bx-cloud-upload icon'></i>
       <p class="helper__text">or drag a file directly</p>
     </form>
     <section class="progress-area" id="progress-area">
+      <!-- Display progress area with uploaded files -->
+      <ng-container *ngIf="progressAreaHTML; else noProgress">
+        <li [innerHTML]="progressAreaHTML"></li>
+      </ng-container>
+      <ng-template #noProgress>
+        <p>No file is being uploaded.</p>
+      </ng-template>
     </section>
     <section class="uploaded-area" id="uploaded-area">
+      <!-- Display uploaded files -->
+      <li *ngFor="let file of uploadedFiles" class="row">
+        <div class="content upload">
+          <i class='bx bx-file file__progress-icon'></i>
+          <div class="details">
+            <span class="name">{{ file.name }} • Uploaded</span>
+            <span class="size">{{ file.size }}</span>
+          </div>
+        </div>
+        <i class='bx bx-check file__check-icon'></i>
+      </li>
     </section>
   </div>
 </div>
