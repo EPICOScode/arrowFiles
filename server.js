@@ -13,7 +13,7 @@ app.use(cors({
   origin: 'http://localhost:4200'
 }));
 
-mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 15000, });
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'Mongo DB connection error'));
