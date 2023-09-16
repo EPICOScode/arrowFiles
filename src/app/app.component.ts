@@ -7,6 +7,9 @@ import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
 
   private ifRunning = false;
@@ -44,7 +47,7 @@ export class AppComponent {
     const headers = new HttpHeaders();
     headers.set('Accept', 'application/json');
 
-    this.http.post<any>('http://your-express-backend-api/upload', formData, {
+    this.http.post<any>('http://localhost:3000/upload', formData, {
       headers,
       reportProgress: true,
       observe: 'events'
@@ -75,7 +78,7 @@ export class AppComponent {
       } else if (event.type === HttpEventType.Response) {
         this.progressAreaHTML = '';
 
-        const uploadedSize = file.size < 1024 ? file.size + ' B' : (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+        const uploadedSize = file.size < 1024 ? file.size + 'B' : (file.size / (1024 * 1024)).toFixed(2) + ' MB';
         const uploadedHTML = `
           <li class="row">
             <div class="content upload">

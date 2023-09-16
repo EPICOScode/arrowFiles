@@ -4,9 +4,8 @@
     <form (click)="onFormClick()">
       <!-- We are hiding the file input and using a button to trigger it -->
       <input #fileInput type="file" id="file-input" style="display: none" (change)="onFileChange($event)">
-      <p class="helper__text">Push the button to upload a file</p>
+      <p class="helper__text">click to upload a file</p>
       <i class='bx bx-cloud-upload icon'></i>
-      <p class="helper__text">or drag a file directly</p>
     </form>
     <section class="progress-area" id="progress-area">
       <!-- Display progress area with uploaded files -->
@@ -14,7 +13,6 @@
         <li [innerHTML]="progressAreaHTML"></li>
       </ng-container>
       <ng-template #noProgress>
-        <p>No file is being uploaded.</p>
       </ng-template>
     </section>
     <section class="uploaded-area" id="uploaded-area">
@@ -65,10 +63,10 @@
           </li>
         </ul>
         <!--login /sing-up-->
-        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+        <!-- <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
           <a href="login" class="text-white text-decoration-none nav-link">Login</a>
           <a href="signup" class="text-white text-decoration-none nav-link">Sign-up</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
