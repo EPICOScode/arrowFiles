@@ -19,8 +19,19 @@
   *,::before,::after{
     box-sizing: border-box;
   }
+
+  .top-right-logo {
+position: absolute;
+top:0;
+right: 0;
+padding: 4rem;
+color: #ffffff;
+
+}
+
   .container{
       padding-top:2rem;
+      padding-bottom: 2rem;
       width:100%;
       max-width: 800px;
       justify-content: center;
@@ -116,4 +127,37 @@
     }
     .file__check-icon{
         font-size: calc(var(--normal-font-size) + .5rem);
+    }
+
+    .custom-search {
+      position: absolute;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      width: 30rem;
+      text-align: center;
+      
+    }
+    .custom-search-input {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 100px;
+      padding: 10px 100px 10px 20px; 
+      line-height: 1;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .custom-search-botton {
+      position: absolute;
+      right: 3px; 
+      top: 3px;
+      bottom: 3px;
+      border: 0;
+      background: #232224;
+      color: #fff;
+      outline: none;
+      margin: 0;
+      padding: 0 10px;
+      border-radius: 100px;
+      z-index: 2;
     }
