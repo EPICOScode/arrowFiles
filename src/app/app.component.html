@@ -36,46 +36,13 @@
     <a class="navbar-brand fs-4" href="logo">Arrow Files</a>
   </div>
 </div>
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-bottom">
-  <div class="canvas-effect" *ngIf="canvasEffectActive"></div>
-  <div class="container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-      aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!--SideBar-->
-    <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel">
-      <!--SideBar Header-->
-      <div class="offcanvas-header text-white border-bottom">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Arrow Files</h5>
-        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
-          aria-label="Close"></button>
-      </div>
-      <!--SideBar Body-->
-      <div class="offcanvas-body d-flex flex-column flex-lg-row p-4">
-        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-          <li class="nav-item mx-2">
-            <a popup class="nav-link active" aria-current="page" href="contact">Contact</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a popup class="nav-link active " aria-current="page" href="help">Help</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a popup class="nav-link active" aria-current="page" href="feedback">Feedback</a>
-          </li>
-        </ul>
         <!--login /sing-up-->
          <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
           <a href="signup" class="text-white text-decoration-none nav-link">User</a>
         </div> 
-      </div>
-    </div>
-  </div>
+ 
   <div class="custom-search">
     <input type="text" class="custom-search-input" placeholder="Get your download link">
     <button class="custom-search-botton" type="button" (click)="onUploadDoneClick()">upload done</button>
   </div>
-</nav>
 
