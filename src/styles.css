@@ -17,6 +17,7 @@ body {
   background-position: center;
   }
 
-@import url("./assets/upload.css");
+@import url("./app/upload/upload.component.css");
+@import url("./app/navbar/navbar.component.css")
 
 
