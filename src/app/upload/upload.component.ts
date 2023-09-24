@@ -1,10 +1,10 @@
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
-import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.css']
+  styleUrls: ['./upload.component.css'],
 })
 export class UploadComponent {
   title(title: any) {
@@ -119,4 +119,24 @@ export class UploadComponent {
       });
   }
 
+  onUploadDoneClick(): void {
+    if (this.identifier) {
+      this.http
+        .get<any>(`http://localhost:3000/generate-link/${this.identifier}`)
+        .subscribe((response) => {
+          const downloadLink = response.downloadLink;
+
+          const downloadLinkElement = document.createElement('a');
+          downloadLinkElement.href = downloadLink;
+          downloadLinkElement.target = '_blank';
+
+          downloadLinkElement.textContent = 'Download Link';
+          downloadLinkElement.style.display = 'block';
+
+          downloadLinkElement.click();
+        });
+    } else {
+      console.error('Identifier is not set');
+    }
+  }
 }

@@ -17,7 +17,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { UploadComponent } from './upload/upload.component';
-import { UploadDoneComponent } from './upload-done/upload-done.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
@@ -27,7 +26,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavigationComponent,
     DashboardComponent,
     UploadComponent,
-    UploadDoneComponent,
+    
     NavbarComponent,
       
   ],

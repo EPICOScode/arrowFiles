@@ -1,32 +1,36 @@
 <!--Upload input-->
 <div class="container">
-    <div class="form__container">
-      <form (click)="onFormClick()">
-        <!-- We are hiding the file input and using a button to trigger it -->
-        <input #fileInput type="file" id="file-input" style="display: none" (change)="onFileChange($event)">
-        <p class="helper__text">click to upload a file</p>
-        <i class='bx bx-cloud-upload icon'></i>
-      </form>
-      <section class="progress-area" id="progress-area">
-        <!-- Display progress area with uploaded files -->
-        <ng-container *ngIf="progressAreaHTML; else noProgress">
-          <li [innerHTML]="progressAreaHTML"></li>
-        </ng-container>
-        <ng-template #noProgress>
-        </ng-template>
-      </section>
-      <section class="uploaded-area" id="uploaded-area">
-        <!-- Display uploaded files -->
-        <li *ngFor="let file of uploadedFiles" class="row">
-          <div class="content upload">
-            <i class='bx bx-file file__progress-icon'></i>
-            <div class="details">
-              <span class="name">{{ file.name }} • Uploaded</span>
-              <span class="size">{{ file.size }}</span>
-            </div>
+  <div class="form__container">
+    <form (click)="onFormClick()">
+      <!-- We are hiding the file input and using a button to trigger it -->
+      <input #fileInput type="file" id="file-input" style="display: none" (change)="onFileChange($event)">
+      <p class="helper__text">click to upload a file</p>
+      <i class='bx bx-cloud-upload icon'></i>
+    </form>
+    <section class="progress-area" id="progress-area">
+      <!-- Display progress area with uploaded files -->
+      <ng-container *ngIf="progressAreaHTML; else noProgress">
+        <li [innerHTML]="progressAreaHTML"></li>
+      </ng-container>
+      <ng-template #noProgress>
+      </ng-template>
+    </section>
+    <section class="uploaded-area" id="uploaded-area">
+      <!-- Display uploaded files -->
+      <li *ngFor="let file of uploadedFiles" class="row">
+        <div class="content upload">
+          <i class='bx bx-file file__progress-icon'></i>
+          <div class="details">
+            <span class="name">{{ file.name }} • Uploaded</span>
+            <span class="size">{{ file.size }}</span>
           </div>
-          <i class='bx bx-check file__check-icon'></i>
-        </li>
-      </section>
-    </div>
+        </div>
+        <i class='bx bx-check file__check-icon'></i>
+      </li>
+    </section>
   </div>
+</div>
+<div class="custom-search">
+  <input type="text" class="custom-search-input" placeholder="Get your download link">
+  <button class="custom-search-botton" type="button" (click)="onUploadDoneClick()">upload done</button>
+</div>
