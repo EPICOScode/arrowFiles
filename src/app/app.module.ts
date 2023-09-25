@@ -18,6 +18,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { UploadComponent } from './upload/upload.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { SignupComponent } from './signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavigationComponent,
     DashboardComponent,
     UploadComponent,
-    
+
     NavbarComponent,
-      
+    InicioComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -45,6 +50,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatMenuModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

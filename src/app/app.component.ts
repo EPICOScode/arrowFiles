@@ -1,15 +1,19 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { OnSameUrlNavigation } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
+export class AppComponent implements OnInit {
+  title = 'Titulo';
+  //throw new Error('Method not implemented.');
+
+  constructor(private Router: Router) {}
+
+  ngOnInit(): void {
+    this.Router.navigate(['inicio']);
   }
- 
-  
 }
