@@ -5,6 +5,10 @@ const path = require('path');
 const mongoose = require('mongoose');
 const archiver = require('archiver');
 const fs = require('fs');
+const Archive = require('./models/archive.model');
+const File = require('./models/file.model');
+const User = require('./models/user.model');
+
 
 const app = express();
 const port = 3000;
@@ -55,7 +59,10 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
   await uploadedFile.save();
 
-  res.status(200).json({ message: 'File uploaded successfully' });
+  res.status(200).json({
+    message: 'File uploaded successfully',
+    uniqueIdentifier: uploadedFile.uniqueIdentifier,
+  });
 });
 
 app.get('/download/:uniqueIdentifier', async (req, res) => {
@@ -78,6 +85,16 @@ app.get('/download/:uniqueIdentifier', async (req, res) => {
   });
 
   archive.finalize();
+});
+
+//generating download links
+app.get('/generate-link/:uniqueIdentifier', async (req, res) => {
+  const uniqueIdentifier = req.params.uniqueIdentifier;
+
+  //download link
+  const downloadLink = `http://localhost:3000/download/${uniqueIdentifier}`;
+
+  res.status(200).json({ downloadLink });
 });
 
 app.listen(port, () => {
